@@ -19,5 +19,12 @@ In the folder docker
     $ docker tag env-java-21-dev-container:latest localhost:5001/env-java-21-dev-container:1.0
     $ docker image rm env-java-21-dev-container:latest
     $ docker push localhost:5001/env-java-21-dev-container:1.0
-    
+
+In the folder docker
+
+    $ docker build -f Dockerfile17 -t env-java-17-dev-container .
+    $ docker tag env-java-17-dev-container:latest localhost:5001/env-java-17-dev-container:1.0
+    $ docker image rm env-java-17-dev-container:latest
+    $ docker push localhost:5001/env-java-17-dev-container:1.0
+
 
