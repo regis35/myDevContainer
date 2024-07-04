@@ -1,0 +1,39 @@
+// Just dev.container with ubuntu
+//{
+//  name: "dev-container-ubuntu",
+//  image:  "ubuntu:24.04"
+//}
+
+//{
+//  name: "dev-container-ubuntu",
+//  image:  "localhost:5001/ubuntu:24.04"
+//}
+
+// dev.container with custom docker file
+//{
+//  name: "dev-container-docker-file",
+//  build: {
+//      dockerfile: "../docker/Dockerfile"
+//  }
+//}
+
+// build image and push image before
+
+// dev.container with custom image with java 17
+//{
+//  name: "dev-container-custom-java-17",
+//  image:  "localhost:5001/env-java-17-dev-container:1.0"
+//}
+
+// dev.container with custom image with java 21
+//{
+//  name: "dev-container-custom-java-21",
+//  image:  "localhost:5001/env-java-21-dev-container:1.0"
+//}
+
+{
+  name: "dev-container-docker-compose",
+  dockerComposeFile: "../docker/docker-compose.yml",
+  service: "env-dev-java-17",
+  shutdownAction: "stopCompose"
+}
