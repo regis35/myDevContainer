@@ -4,6 +4,20 @@
 //  image:  "ubuntu:24.04"
 //}
 
+{
+  name: "dev-container-ubuntu",
+  image:  "ubuntu:24.04",
+  features: {
+    "ghcr.io/devcontainers/features/java:1": {
+      version : 21,
+      installMaven : true,
+      mavenVersion : "3.9.8"
+    }
+  }
+}
+
+
+
 //{
 //  name: "dev-container-ubuntu",
 //  image:  "localhost:5001/ubuntu:24.04"
@@ -31,9 +45,9 @@
 //  image:  "localhost:5001/env-java-21-dev-container:1.0"
 //}
 
-{
-  name: "dev-container-docker-compose",
-  dockerComposeFile: "../docker/docker-compose.yml",
-  service: "env-dev-java-17",
-  shutdownAction: "stopCompose"
-}
+//{
+//  name: "dev-container-docker-compose",
+//  dockerComposeFile: "../docker/docker-compose.yml",
+//  service: "env-dev-java-17",
+//  shutdownAction: "stopCompose"
+//}

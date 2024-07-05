@@ -11,3 +11,4 @@ services:
       POSTGRES_DB: test-dev-container
       POSTGRES_USER: regis
       POSTGRES_PASSWORD: pwd-popo
+
