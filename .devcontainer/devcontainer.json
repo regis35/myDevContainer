@@ -4,17 +4,22 @@
 //  image:  "ubuntu:24.04"
 //}
 
-{
-  name: "dev-container-ubuntu",
-  image:  "ubuntu:24.04",
-  features: {
-    "ghcr.io/devcontainers/features/java:1": {
-      version : 21,
-      installMaven : true,
-      mavenVersion : "3.9.8"
-    }
-  }
-}
+// Dev container with feature java + maven
+//{
+//  name: "dev-container-ubuntu",
+//  image:  "ubuntu:24.04",
+//  features: {
+//    "ghcr.io/devcontainers/features/java:1": {
+//      version : 21,
+//      installMaven : true,
+//      mavenVersion : "3.9.8"
+//    }
+//  },
+//  hostRequirements: {
+//    "hostRequirements.cpus": 2,
+//    "hostRequirements.memory" : 2gb
+//  },
+//}
 
 
 
@@ -42,12 +47,24 @@
 // dev.container with custom image with java 21
 //{
 //  name: "dev-container-custom-java-21",
-//  image:  "localhost:5001/env-java-21-dev-container:1.0"
+//  image:  "localhost:5001/env-java-21-dev-container:1.0",
+//  hostRequirements: {
+//    "hostRequirements.cpus": 2,
+//    "hostRequirements.memory" : "2gb"
+//  }
 //}
 
-//{
-//  name: "dev-container-docker-compose",
-//  dockerComposeFile: "../docker/docker-compose.yml",
-//  service: "env-dev-java-17",
-//  shutdownAction: "stopCompose"
-//}
+//https://www.heissenberger.at/en/blog/devcontainer-forward-ports-composer/
+
+{
+  name: "dev-container-docker-compose",
+  dockerComposeFile: "../docker/docker-compose.yml",
+  service: "env-dev-java-21",
+  shutdownAction: "stopCompose",
+  forwardPorts: ["8080"], // Permet d'ouvrir le port du SB dans le conteneur pour qu'il soit accessible de l'extérieur
+  portsAttributes  :{
+    "8080" :{
+        "label": "Service Hello world"
+    }
+  }
+}

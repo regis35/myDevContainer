@@ -1,14 +1,25 @@
 services:
 
-  env-dev-java-17:
-    image: localhost:5001/env-java-17-dev-container:1.0
+  env-dev-java-21:
+    image: localhost:5001/env-java-21-dev-container:1.0
+    networks:
+      - my-network
 
   bdd:
     image: localhost:5001/postgres:16.3
     restart: always
     shm_size: 128mb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: test-dev-container
       POSTGRES_USER: regis
       POSTGRES_PASSWORD: pwd-popo
+    networks:
+      - my-network
 
+networks:
+  my-network : {}
+
+volumes:
+  postgres-data:
