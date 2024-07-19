@@ -1,1 +1,10 @@
 bzh/redge/myDevContainer/MyDevContainerApplication.class
+bzh/redge/myDevContainer/repository/UserRepository.class
+bzh/redge/myDevContainer/web/user/dto/UserResponse.class
+bzh/redge/myDevContainer/web/user/dto/UserRequest.class
+bzh/redge/myDevContainer/domain/UserDomain.class
+bzh/redge/myDevContainer/web/user/UserMapper.class
+bzh/redge/myDevContainer/web/user/UserMapperImpl.class
+bzh/redge/myDevContainer/web/user/UserController.class
+bzh/redge/myDevContainer/web/MyController.class
+bzh/redge/myDevContainer/entity/User.class

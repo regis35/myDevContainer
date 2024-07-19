@@ -21,8 +21,6 @@
 //  },
 //}
 
-
-
 //{
 //  name: "dev-container-ubuntu",
 //  image:  "localhost:5001/ubuntu:24.04"
@@ -64,7 +62,10 @@
   forwardPorts: ["8080"], // Permet d'ouvrir le port du SB dans le conteneur pour qu'il soit accessible de l'extérieur
   portsAttributes  :{
     "8080" :{
-        "label": "Service Hello world"
+        "label": "Service TODO"
     }
-  }
+  },
+  mounts: [
+    "source=${localWorkspaceFolder}/app-data,target=/data,type=bind,consistency=cached"
+  ]
 }

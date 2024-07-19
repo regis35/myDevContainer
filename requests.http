@@ -1,2 +1,13 @@
 ###
-GET http://localhost:8080/api
+GET http://localhost:8080/api/api
+
+### Create new user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "email": "regislecoz@gmail.com",
+  "pwd": "pwd",
+  "firstname": "regis",
+  "lastname": "le coz"
+}
